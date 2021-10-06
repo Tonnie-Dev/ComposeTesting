@@ -20,12 +20,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.example.compose.rally"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 1
         versionName '1.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -116,7 +116,7 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$rootProject.composeVersion"
 
     //
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:1.0.3"
 
     debugImplementation "androidx.compose.ui:ui-test-manifest:$rootProject.composeVersion"
 }
