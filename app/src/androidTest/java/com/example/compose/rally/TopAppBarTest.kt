@@ -32,13 +32,16 @@ class TopAppBarTest {
                 currentScreen = RallyScreen.Accounts
             )
         }
+        testRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
 
+        //testRule.onNodeWithContentDescription(RallyScreen.Accounts.name).assertExists()
 
-        testRule.onRoot().printToLog("currentLabelExists")
-        //replace Thread.Sleep() with an assertion
-
-        testRule.onNodeWithText(RallyScreen.Accounts.name.uppercase())
-            .assertExists()
+      testRule.onNode(hasText(RallyScreen.Accounts.name.uppercase()) and hasParent(
+          hasContentDescription(RallyScreen.Accounts.name)), useUnmergedTree = true)
     }
+
+
+
+
 
 }

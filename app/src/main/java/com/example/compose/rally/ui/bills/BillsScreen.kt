@@ -16,8 +16,14 @@
 
 package com.example.compose.rally.ui.bills
 
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
 import com.example.compose.rally.R
 import com.example.compose.rally.data.Bill
 import com.example.compose.rally.ui.components.BillRow
@@ -28,6 +34,23 @@ import com.example.compose.rally.ui.components.StatementBody
  */
 @Composable
 fun BillsBody(bills: List<Bill>) {
+
+
+
+
+    Button(
+        onClick = { },
+        modifier = Modifier
+            .semantics { contentDescription = "Like" }
+            .padding(10.dp)
+    ) {
+
+    }
+
+
+
+
+    
     StatementBody(
         items = bills,
         amounts = { bill -> bill.amount },
@@ -39,3 +62,5 @@ fun BillsBody(bills: List<Bill>) {
         }
     )
 }
+
+

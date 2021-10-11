@@ -43,6 +43,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.compose.rally.RallyScreen
@@ -59,6 +60,8 @@ fun RallyTopAppBar(
             .height(TabHeight)
             .fillMaxWidth()
     ) {
+
+
         Row(Modifier.selectableGroup()) {
             allScreens.forEach { screen ->
                 RallyTab(
@@ -71,6 +74,13 @@ fun RallyTopAppBar(
         }
     }
 }
+
+@Preview
+@Composable
+fun  RallyTopAppBarPreview() {
+    RallyTopAppBar(allScreens = RallyScreen.values().toList(), onTabSelected ={}, currentScreen =RallyScreen.Accounts)
+}
+
 
 @Composable
 private fun RallyTab(
@@ -113,7 +123,7 @@ private fun RallyTab(
         Icon(imageVector = icon, contentDescription = null, tint = tabTintColor)
         if (selected) {
             Spacer(Modifier.width(12.dp))
-            Text(text.uppercase(Locale.getDefault()), color = tabTintColor)
+            Text(text =text.uppercase(Locale.getDefault()), color = tabTintColor)
         }
     }
 }
